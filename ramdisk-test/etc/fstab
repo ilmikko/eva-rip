@@ -1,0 +1,4 @@
+#
+# Test fstab
+#
+/dev/sda1	/	ext4	defaults
