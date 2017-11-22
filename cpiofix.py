@@ -10,7 +10,7 @@ import sys;
 import __main__;
 
 trailer = b'TRAILER!!!\x00'
-inodeoffset = 0x000493e0-1 # Don't ask me
+inodeoffset = 0x000493e0-2 # Don't ask me
 
 # New ASCII Format
 
