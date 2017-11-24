@@ -114,11 +114,11 @@ def getHeader(binary,writebinary):
 
     return chunks;
 
-def fix(filename):
+def fix(filename,newfilename):
     print('Inode offset: %s' % inodeoffset);
 
     # open binary stream for reading
-    with open(filename+'.fixed','wb') as writebinary:
+    with open(newfilename,'wb') as writebinary:
         with open(filename,'rb') as binary:
             while True:
                 #print("Header size: %s" % headerSize);
@@ -160,15 +160,16 @@ def fix(filename):
 
                 if info['filename']==trailer:
                     print('Done! :D');
-                    print('Written '+filename+'.fixed');
+                    print('Written '+newfilename);
                     return;
 
 def help():
     print('Usage:');
-    print('%s [filename]' % sys.argv[0]);
+    print('%s [compressed.cpio] [fixed.cpio]' % sys.argv[0]);
 
-if len(sys.argv)==1:
+if len(sys.argv)<3:
     help();
 else:
     filename = sys.argv[1];
-    fix(filename);
+    newfilename = sys.argv[2];
+    fix(filename,newfilename);
