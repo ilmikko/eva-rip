@@ -1,0 +1,37 @@
+1. `mkdir ALARM;cd ALARM`
+
+1.1. `wget http://archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz`
+Get the ALARM latest
+
+1.2. `gunzip ArchLinux*.tar.gz`
+1.3. `tar -xvf ArchLinux*.tar`
+Decompress the package
+
+1.4. `cd ../`
+
+2. `ldd /bin/echo`
+Get the needed libraries for the binary
+
+3. `cd ramdisk`
+Go to our new ramdisk
+
+3.1. `mkdir -p /usr/lib /usr/bin`
+Create the required directories for Arch
+
+3.2. `ln -s usr/bin .`
+3.3. `ln -s usr/lib .`
+Link some more directories
+
+3.4. `cp -rv ../ALARM/bin/echo bin`
+Move the binary
+
+3.5. `cp -rv ../ALARM/lib/ld-*.so lib`
+3.6. `cp -rv ../ALARM/lib/ld-linux-*.so lib`
+3.7. `cp -rv ../ALARM/lib/libc-*.so lib`
+3.8. `cp -rv ../ALARM/lib/libc.so* lib`
+Move the libraries
+
+3.9. `cd ../`
+
+4. `./compress.sh ramdisk`
+Compress the ramdisk
