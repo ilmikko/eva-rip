@@ -10,7 +10,7 @@ fi
 bootimg=$1
 
 if [ -z $2 ]; then
-	opts="srb";
+	opts="b";
 else
 	opts="$2";
 fi
@@ -24,8 +24,8 @@ if [[ $opts == *"r"* ]]; then
         sudo fastboot flash recovery "$bootimg"
 fi
 if [[ $opts == *"b"* ]]; then
-	echo Flashing boot...
-	sudo fastboot flash boot "$bootimg"
+				echo Flashing boot...
+				sudo fastboot flash boot "$bootimg"
 fi
 
 if [ -z $3 ]; then
