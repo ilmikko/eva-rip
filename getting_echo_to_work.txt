@@ -35,3 +35,19 @@ Move the libraries
 
 4. `./compress.sh ramdisk`
 Compress the ramdisk
+
+For the full arch installation:
+
+/bin -> /system/bin
+/lib -> /system/lib
+/boot -> /system/boot
+/home -> /system/home
+/opt -> /system/opt
+/run -> /system/run
+/usr -> /system/usr
+/var -> /system/var
+
+Conflicting files/directories:
+
+/etc
+
